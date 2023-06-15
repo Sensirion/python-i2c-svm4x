@@ -173,12 +173,12 @@
 
 
 <div class="viewcode-block" id="Svm41I2cDevice"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice">[docs]</a><span class="k">class</span> <span class="nc">Svm41I2cDevice</span><span class="p">(</span><span class="n">I2cDevice</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SVM41 I²C device class to allow executing I²C commands.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Svm41I2cDevice.__init__"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">slave_address</span><span class="o">=</span><span class="mh">0x6A</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Constructs a new SVM41 I²C device.</span>
 
 <span class="sd">        :param ~sensirion_i2c_driver.connection.I2cConnection connection:</span>
@@ -189,13 +189,13 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">Svm41I2cDevice</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">slave_address</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.device_reset"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.device_reset">[docs]</a>    <span class="k">def</span> <span class="nf">device_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Execute a device reset (reboot firmware, similar to power cycle).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdDeviceReset</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_serial_number"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_serial_number">[docs]</a>    <span class="k">def</span> <span class="nf">get_serial_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the serial number of the device.</span>
 
 <span class="sd">        :return: The serial number as an ASCII string.</span>
@@ -204,7 +204,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdGetSerialNumber</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_version"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_version">[docs]</a>    <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the version of the device firmware, hardware and SHDLC protocol.</span>
 
 <span class="sd">        :return: The device version.</span>
@@ -213,7 +213,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdGetVersion</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_compensation_temperature_offset"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_compensation_temperature_offset">[docs]</a>    <span class="k">def</span> <span class="nf">get_compensation_temperature_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the temperature offset for RHT measurements.</span>
 
 <span class="sd">        :return: Temperature offset in degrees celsius.</span>
@@ -223,7 +223,7 @@
             <span class="n">Svm41I2cCmdGetTemperatureOffsetForRhtMeasurements</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.set_compensation_temperature_offset"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.set_compensation_temperature_offset">[docs]</a>    <span class="k">def</span> <span class="nf">set_compensation_temperature_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t_offset</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the temperature offset for RHT measurements.</span>
 
 <span class="sd">        .. note:: Execute the command</span>
@@ -238,7 +238,7 @@
             <span class="n">Svm41I2cCmdSetTemperatureOffsetForRhtMeasurements</span><span class="p">(</span><span class="n">t_offset</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_voc_tuning_parameters"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_voc_tuning_parameters">[docs]</a>    <span class="k">def</span> <span class="nf">get_voc_tuning_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the currently set parameters for customizing the VOC algorithm.</span>
 
 <span class="sd">        :return:</span>
@@ -270,7 +270,7 @@
                                   <span class="n">learning_time_gain_hours</span><span class="p">,</span>
                                   <span class="n">gating_max_duration_minutes</span><span class="p">,</span> <span class="n">std_initial</span><span class="p">,</span>
                                   <span class="n">gain_factor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets parameters to customize the VOC algorithm. This command is only</span>
 <span class="sd">        available in idle mode.</span>
 
@@ -312,7 +312,7 @@
             <span class="n">std_initial</span><span class="p">,</span> <span class="n">gain_factor</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_nox_tuning_parameters"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_nox_tuning_parameters">[docs]</a>    <span class="k">def</span> <span class="nf">get_nox_tuning_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the currently set parameters for customizing the NOx algorithm.</span>
 
 <span class="sd">        :return:</span>
@@ -346,7 +346,7 @@
                                   <span class="n">learning_time_gain_hours</span><span class="p">,</span>
                                   <span class="n">gating_max_duration_minutes</span><span class="p">,</span> <span class="n">std_initial</span><span class="p">,</span>
                                   <span class="n">gain_factor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets parameters to customize the NOx algorithm. This command is only</span>
 <span class="sd">        available in idle mode.</span>
 
@@ -386,13 +386,13 @@
             <span class="n">std_initial</span><span class="p">,</span> <span class="n">gain_factor</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.store_nv_data"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.store_nv_data">[docs]</a>    <span class="k">def</span> <span class="nf">store_nv_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stores all customer engine parameters to the non-volatile memory.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdStoreNvData</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.get_voc_state"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.get_voc_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_voc_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the current VOC algorithm state. Retrieved values can be used to</span>
 <span class="sd">        set the VOC algorithm state to resume operation after a short</span>
 <span class="sd">        interruption, skipping initial learning phase. This command is only</span>
@@ -407,7 +407,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdGetVocAlgorithmState</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.set_voc_state"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.set_voc_state">[docs]</a>    <span class="k">def</span> <span class="nf">set_voc_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set previously retrieved VOC algorithm state to resume operation after</span>
 <span class="sd">        a short interruption, skipping initial learning phase. This command is</span>
 <span class="sd">        only available in idle mode.</span>
@@ -420,7 +420,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdSetVocAlgorithmState</span><span class="p">(</span><span class="n">state</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.start_measurement"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.start_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">start_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Starts continuous measurement.</span>
 
 <span class="sd">        .. note:: This command is only available in idle mode.</span>
@@ -428,7 +428,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdStartMeasurement</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.stop_measurement"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.stop_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">stop_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Leaves the measurement mode and returns to the idle mode.</span>
 
 <span class="sd">        .. note:: This command is only available in measurement mode.</span>
@@ -436,7 +436,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdStopMeasurement</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.read_measured_values"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.read_measured_values">[docs]</a>    <span class="k">def</span> <span class="nf">read_measured_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the new measurement results.</span>
 
 <span class="sd">        .. note:: This command is only available in measurement mode. The</span>
@@ -463,7 +463,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Svm41I2cCmdReadMeasuredValues</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Svm41I2cDevice.read_measured_values_raw"><a class="viewcode-back" href="../../api.html#sensirion_i2c_svm41.device.Svm41I2cDevice.read_measured_values_raw">[docs]</a>    <span class="k">def</span> <span class="nf">read_measured_values_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the new measurement results with raw values added.</span>
 
 <span class="sd">        .. note:: This command is only available in measurement mode. The</span>
@@ -501,7 +501,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021 Sensirion AG, Switzerland
+        &copy; Copyright 2023 Sensirion AG, Switzerland
 
     </p>
   </div>
