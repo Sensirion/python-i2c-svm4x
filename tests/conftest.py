@@ -16,8 +16,8 @@ def pytest_addoption(parser):
     """
     Register command line options
     """
-    parser.addoption("--serial-port", action="store", type="string")
-    parser.addoption("--serial-bitrate", action="store", type="int",
+    parser.addoption("--serial-port", action="store", type=str)
+    parser.addoption("--serial-bitrate", action="store", type=int,
                      default=460800)
 
 
