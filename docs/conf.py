@@ -9,6 +9,7 @@
 # -- Path setup --------------------------------------------------------------
 
 import importlib.metadata as metadata
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -20,14 +21,14 @@ from datetime import datetime
 # sys.path.insert(0, os.path.abspath('.'))
 
 # Add project directory such that sphinx can detect the package.
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # -- Project information -----------------------------------------------------
 distribution = metadata.distribution("sensirion_i2c_svm41")
 
 project = distribution.name
-copyright = u'{} Sensirion AG, Switzerland'.format(datetime.now().year)
-author = u'Sensirion AG'
+copyright = "{} Sensirion AG, Switzerland".format(datetime.now().year)
+author = "Sensirion AG"
 
 # The short X.Y version
 version = distribution.version
@@ -44,28 +45,28 @@ release = distribution.version
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx_tabs.tabs',
-    'sphinx.ext.inheritance_diagram',
-    'sphinx.ext.githubpages',
-    'sphinx.ext.intersphinx',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx_tabs.tabs",
+    "sphinx.ext.inheritance_diagram",
+    "sphinx.ext.githubpages",
+    "sphinx.ext.intersphinx",
 ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -88,34 +89,31 @@ html_theme = 'sphinx_rtd_theme'
 #
 # html_sidebars = {}
 
-html_favicon = 'favicon.ico'
+html_favicon = "favicon.ico"
 
 # -- Extension configuration -------------------------------------------------
 autodoc_default_options = {
-    'members': None,
-    'member-order': 'bysource',
-    'special-members': '__init__',
-    'undoc-members': True
+    "members": None,
+    "member-order": "bysource",
+    "special-members": "__init__",
+    "undoc-members": True,
 }
 
 
 def autodoc_skip_member(app, what, name, obj, skip, options):
-    whitelist = ('__init__',)
-    exclude = name.startswith('__') and (name not in whitelist)
+    whitelist = ("__init__",)
+    exclude = name.startswith("__") and (name not in whitelist)
     return skip or exclude
 
 
 def setup(app):
-    app.connect('autodoc-skip-member', autodoc_skip_member)
+    app.connect("autodoc-skip-member", autodoc_skip_member)
 
 
-scv_whitelist_branches = ('master',)
+scv_whitelist_branches = ("main",)
 
-scv_grm_exclude = ('.gitignore', '.nojekyll')
+scv_grm_exclude = (".gitignore", ".nojekyll")
 
 intersphinx_mapping = {
-    'sensirion_i2c_driver': (
-        'https://sensirion.github.io/python-i2c-driver/',
-        None
-    ),
+    "sensirion_i2c_driver": ("https://sensirion.github.io/python-i2c-driver/", None),
 }
