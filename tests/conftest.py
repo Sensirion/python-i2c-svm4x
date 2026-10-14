@@ -2,20 +2,22 @@
 # (c) Copyright 2021 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
+
+import pytest
+from sensirion_i2c_driver import I2cConnection
 from sensirion_shdlc_driver import ShdlcSerialPort, ShdlcConnection
 from sensirion_shdlc_sensorbridge import SensorBridgePort, \
     SensorBridgeShdlcDevice, SensorBridgeI2cProxy
-from sensirion_i2c_driver import I2cConnection
+
 from sensirion_i2c_svm41 import Svm41I2cDevice
-import pytest
 
 
 def pytest_addoption(parser):
     """
     Register command line options
     """
-    parser.addoption("--serial-port", action="store", type="string")
-    parser.addoption("--serial-bitrate", action="store", type="int",
+    parser.addoption("--serial-port", action="store", type=str)
+    parser.addoption("--serial-bitrate", action="store", type=int,
                      default=460800)
 
 
@@ -43,8 +45,7 @@ def pytest_report_header(config):
     """
     lines = []
     lines.append("SensorBridge serial port: " + str(_get_serial_port(config)))
-    lines.append("SensorBridge serial bitrate: " +
-                 str(_get_serial_bitrate(config)))
+    lines.append("SensorBridge serial bitrate: " + str(_get_serial_bitrate(config)))
     return '\n'.join(lines)
 
 
